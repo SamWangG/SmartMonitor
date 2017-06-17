@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6AC32059-939F-4A03-A5F8-3924A04A3AA1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonitorCore</RootNamespace>
+    <AssemblyName>MonitorCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AlarmHandler.cs" />
+    <Compile Include="APEncapsulator.cs" />
+    <Compile Include="APLotHandler.cs" />
+    <Compile Include="APMsgHandler.cs" />
+    <Compile Include="APParser.cs" />
+    <Compile Include="CHCNetSDK.cs" />
+    <Compile Include="ChineseConverter.cs" />
+    <Compile Include="ConfigManager.cs" />
+    <Compile Include="Config\APConfig.cs" />
+    <Compile Include="Config\DBConfig.cs" />
+    <Compile Include="Config\ServiceConfig.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="DB_Core.cs" />
+    <Compile Include="DBMsgHandler.cs" />
+    <Compile Include="DBOrderMonitor.cs" />
+    <Compile Include="DB_AlarmHandler.cs" />
+    <Compile Include="DB_APLotHandler.cs" />
+    <Compile Include="DB_APMsgHandler.cs" />
+    <Compile Include="DB_DBMsgHandler.cs" />
+    <Compile Include="FFMEPG.cs" />
+    <Compile Include="GUIEvent.cs" />
+    <Compile Include="HardDisk.cs" />
+    <Compile Include="HIKVISION.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="MobileRecMsg.cs" />
+    <Compile Include="MobileRecMsg1.cs" />
+    <Compile Include="MobileSendMsg.cs" />
+    <Compile Include="MobileSendMsg1.cs" />
+    <Compile Include="MTimer.cs" />
+    <Compile Include="PlayCtrl.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="SqlExceptionHelper.cs" />
+    <Compile Include="UDPSocket.cs" />
+    <Compile Include="VideoFilesManager.cs" />
+    <Compile Include="VideoHandler.cs" />
+    <Compile Include="VideoIncise.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ChineseConverter">
+      <HintPath>.\ChineseConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=3.1.0.2504, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.1.0.2504, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Config\App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
