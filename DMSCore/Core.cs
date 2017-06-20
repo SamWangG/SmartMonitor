@@ -62,9 +62,9 @@ namespace MonitorCore
         private int count_Handler = 1;
         public Core()
         {
+            HttpSocket socket = new HttpSocket("http://localhost:8081",8081);
 
-           
-            
+
             //超时检测
             timeout.Elapsed += new System.Timers.ElapsedEventHandler(Job_Timer);//到达时间的时候执行事件；
 
@@ -127,7 +127,7 @@ namespace MonitorCore
                 string APPath = configManager.serviceConfig.AP.path;
 
                 //Launch AP
-                RunBat(APPath);
+                //RunBat(APPath);
 
 
                 /*DateTime time = new DateTime(2017, 04, 19, 19,30, 00);
